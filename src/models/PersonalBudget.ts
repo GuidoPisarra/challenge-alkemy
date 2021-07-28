@@ -1,6 +1,5 @@
 import { Schema , model , Document } from 'mongoose';
 
-
 const schema = new Schema ({
     description : String ,
     amount : Number,

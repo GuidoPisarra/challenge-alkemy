@@ -1,6 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
-import indexRoutes from '../routes/index';
+import indexRoutes from './routes/index';
 import path from 'path';
 
 const app = express();

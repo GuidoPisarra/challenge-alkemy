@@ -2,7 +2,7 @@ import {Router} from 'express';
 
 
 const router =Router();
-import {createBudget, getBudgets, getBudget, deleteBudget , updateBudget}   from '../src/controllers/personal-budget-controller';
+import {createBudget, getBudgets, getBudget, deleteBudget , updateBudget}   from '../controllers/personal-budget-controller';
 
 
 router.route('/budgets')

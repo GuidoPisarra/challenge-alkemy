@@ -1,4 +1,6 @@
+import { BudgetService } from './../../services/budget.service';
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-budget-form',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudgetFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private BudgetService:BudgetService, private router:Router) { }
 
   ngOnInit(): void {
   }
+
+
+  addBudget(description: HTMLInputElement, amount: HTMLInputElement, egress: HTMLInputElement): boolean{
+    //console.log(parseFloat(amount.value)," ",amount.value);
+    this.BudgetService.createBudget(description.value, parseFloat(amount.value) ,egress.checked)
+      .subscribe(res =>{
+        this.router.navigate(['/budget'])
+      }, err => console.log(err))
+    return false;
+  }
+
 
 }

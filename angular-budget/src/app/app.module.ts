@@ -7,6 +7,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { BudgetFormComponent } from './components/budget-form/budget-form.component';
 import { BudgetPreviewComponent } from './components/budget-preview/budget-preview.component';
 import { BudgetListComponent } from './components/budget-list/budget-list.component';
+import {HttpClientModule} from '@angular/common/http'
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { BudgetListComponent } from './components/budget-list/budget-list.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

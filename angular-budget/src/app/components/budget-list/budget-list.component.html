@@ -1,1 +1,24 @@
-<p>budget-list works!</p>
+<table class="table">
+  <thead>
+      <tr>
+          <th>Descripcion</th>
+          <th>Monto</th>
+         <!-- <th>Eliminar</th>-->
+         <!-- <th>Modifica</th>-->
+
+      </tr>
+  </thead>
+   <tbody>
+      <tr *ngFor="let budget  of budgets" class="line-budget" >
+
+          <td [ngClass]= "{'egress': budget.egress, 'entry':!budget.egress}" (click)="selectedBudget(budget._id)">{{ budget.description}}</td>
+          <td [ngClass]= "{'egress': budget.egress, 'entry':!budget.egress}">{{ budget.amount }} </td>
+         <!--<td><button class="btn btn-danger" (click)="deleteBudget(budget._id)">Eliminar</button> </td>-->
+         <!-- <td><button class="btn btn-success" (submit)="updateBudget(budget.description,budget.amount,budget.egress,budget._id)">Modificar</button> </td> -->
+
+
+      </tr>
+  </tbody>
+</table>
+
+

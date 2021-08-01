@@ -1,0 +1,12 @@
+.line-budget{
+  cursor:pinter;
+}
+.line-budget:hover{
+  border: 1px solid #333;
+}
+.entry{
+  background-color: rgb(57, 226, 57);
+}
+.egress{
+  background-color: rgb(246, 70, 70);
+}

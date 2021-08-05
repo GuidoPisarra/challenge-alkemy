@@ -5,7 +5,7 @@
       Nuevo Ingreso/Egreso
     </div>
     <div class="card-body">
-      <form (submit)="addBudget(description, amount, egress)">
+      <form (submit)="addBudget(description, amount, egress,day,month,year)">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Descripcion de Ingreso/Egreso" required #description>
         </div>
@@ -14,6 +14,17 @@
             <span class="input-group-text">$</span>
             <span class="input-group-text">0.00</span>
             <input type="text" class="form-control" aria-label="Monto en Pesos con dos decimales" required #amount>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group mt-3 mb-3">
+            <span class="input-group-text">Fecha </span>
+            <span class="input-group-text">(dd/mm/yyyy)</span>
+            <input type="text" class="form-control" aria-label="Dia" required #day>
+            <span class="input-group-text">/</span>
+            <input type="text" class="form-control" aria-label="Mes" required #month>
+            <span class="input-group-text">/</span>
+            <input type="text" class="form-control" aria-label="Año" required #year>
           </div>
         </div>
         <div class="form-group">

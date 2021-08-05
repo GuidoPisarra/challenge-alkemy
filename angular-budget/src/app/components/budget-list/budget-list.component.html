@@ -3,22 +3,26 @@
       <tr>
           <th>Descripcion</th>
           <th>Monto</th>
-         <!-- <th>Eliminar</th>-->
-         <!-- <th>Modifica</th>-->
+          <th>Eliminar</th>
+         <th>Modifica</th>
 
       </tr>
   </thead>
    <tbody>
-      <tr *ngFor="let budget  of budgets" class="line-budget" >
-
-          <td [ngClass]= "{'egress': budget.egress, 'entry':!budget.egress}" (click)="selectedBudget(budget._id)">{{ budget.description}}</td>
-          <td [ngClass]= "{'egress': budget.egress, 'entry':!budget.egress}">{{ budget.amount }} </td>
-         <!--<td><button class="btn btn-danger" (click)="deleteBudget(budget._id)">Eliminar</button> </td>-->
-         <!-- <td><button class="btn btn-success" (submit)="updateBudget(budget.description,budget.amount,budget.egress,budget._id)">Modificar</button> </td> -->
-
-
+      <tr *ngFor="let budget  of budgets.slice(0, 10)" class="line-budget" >
+        <td [ngClass]= "{'egress': budget.egress, 'entry':!budget.egress}" (click)="selectedBudget(budget._id)">{{ budget.description}}</td>
+        <td [ngClass]= "{'egress': budget.egress, 'entry':!budget.egress}">{{ budget.amount }} </td>
+        <td class="col-1 align-content-sm-center"><button class="btn btn-danger" (click)="deleteBudget(budget._id)">Eliminar</button> </td>
+        <td class="col-1 align-content-sm-center"><button class="btn btn-success" (click)="open()">Modificar</button> </td>
       </tr>
+      <tr>
+       <td> TOTAL </td>
+       <td> {{total}}</td>
+      </tr>
+
   </tbody>
+
+
 </table>
 
 

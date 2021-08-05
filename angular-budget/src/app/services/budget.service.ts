@@ -13,12 +13,15 @@ export class BudgetService {
   constructor(private http :HttpClient) { }
 
 
-  createBudget(description : string , amount : Number , egress : boolean){
+  createBudget(description : string , amount : Number , egress : boolean, day : Number, month : Number , year : Number){
     let newBudget={
 
       "description":description,
       "amount":amount,
-      "egress":egress
+      "egress":egress,
+      "day":day,
+      "month":month,
+      "year":year
     }
     return this.http.post(this.URI,newBudget);
 

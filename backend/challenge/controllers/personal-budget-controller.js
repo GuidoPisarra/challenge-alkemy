@@ -13,15 +13,19 @@ exports.getBudgets = getBudgets;
 async function getBudget(req, res) {
     const { id } = req.params;
     const budget = await PersonalBudget_1.default.findById(id);
+    console.log(budget);
     return res.json(budget);
 }
 exports.getBudget = getBudget;
 async function createBudget(req, res) {
-    const { description, amount, egress } = req.body;
+    const { description, amount, egress, day, month, year } = req.body;
     const newBudget = {
         description: description,
         amount: amount,
         egress: egress,
+        day: day,
+        month: month,
+        year: year,
     };
     const budget = new PersonalBudget_1.default(newBudget);
     await budget.save();
@@ -42,11 +46,14 @@ async function deleteBudget(req, res) {
 exports.deleteBudget = deleteBudget;
 async function updateBudget(req, res) {
     const { id } = req.params;
-    const { description, amount, egress } = req.body;
+    const { description, amount, egress, day, month, year } = req.body;
     const updatedBudget = await PersonalBudget_1.default.findByIdAndUpdate(id, {
         description,
         amount,
-        egress
+        egress,
+        day,
+        month,
+        year
     }, { new: true });
     return res.json({
         message: "Budget Updated",

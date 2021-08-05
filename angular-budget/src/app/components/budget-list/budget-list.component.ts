@@ -15,15 +15,18 @@ import {Router} from '@angular/router';
 export class BudgetListComponent implements OnInit {
 
   budgets : Budget[]  = [ ];
+  total: Number = 0;
 
 
   constructor(private BudgetService: BudgetService, private routerN:Router) { }
 
   ngOnInit(): void {
+    let tot: Number=0;
     this.BudgetService.getBudgets()
       .subscribe(
         res=>(
-          this.budgets=res
+          this.budgets=res,
+          this.total= this.totalBudgets()
         ),
         err=>console.log(err)
       )
@@ -54,6 +57,22 @@ export class BudgetListComponent implements OnInit {
       err=>console.log(err)
     )
   }
+
+  totalBudgets() : number {
+
+    let tot: number = 0;
+
+    this.budgets.forEach((e:any) => {
+      if(e.egress){
+        tot = tot - Number(e.amount);
+      }else{
+        tot = tot + Number(e.amount);
+      }
+    });
+
+    return tot;
+}
+
 
 
 

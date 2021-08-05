@@ -15,9 +15,8 @@ export class BudgetFormComponent implements OnInit {
   }
 
 
-  addBudget(description: HTMLInputElement, amount: HTMLInputElement, egress: HTMLInputElement): boolean{
-    //console.log(parseFloat(amount.value)," ",amount.value);
-    this.BudgetService.createBudget(description.value, parseFloat(amount.value) ,egress.checked)
+  addBudget(description: HTMLInputElement, amount: HTMLInputElement, egress: HTMLInputElement, day:HTMLInputElement, month:HTMLInputElement, year:HTMLInputElement): boolean{
+    this.BudgetService.createBudget(description.value, parseFloat(amount.value) ,egress.checked, parseInt(day.value),parseInt(month.value),parseInt(year.value))
       .subscribe(res =>{
         this.router.navigate(['/budget'])
       }, err => console.log(err))

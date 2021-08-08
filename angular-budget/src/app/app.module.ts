@@ -10,6 +10,7 @@ import { BudgetListComponent } from './components/budget-list/budget-list.compon
 import {HttpClientModule} from '@angular/common/http';
 import { UsersComponentComponent } from './components/users-component/users-component.component';
 import { UsersRegisterComponent } from './components/users-register/users-register.component';
+import { BudgetIndexComponent } from './components/budget-index/budget-index.component';
 
 
 
@@ -21,7 +22,8 @@ import { UsersRegisterComponent } from './components/users-register/users-regist
     BudgetPreviewComponent,
     BudgetListComponent,
     UsersComponentComponent,
-    UsersRegisterComponent
+    UsersRegisterComponent,
+    BudgetIndexComponent
 
   ],
   imports: [

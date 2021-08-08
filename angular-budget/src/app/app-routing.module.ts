@@ -5,9 +5,13 @@ import { BudgetFormComponent } from './components/budget-form/budget-form.compon
 import { BudgetPreviewComponent } from './components/budget-preview/budget-preview.component';
 import { UsersComponentComponent } from './components/users-component/users-component.component';
 import { UsersRegisterComponent } from './components/users-register/users-register.component';
-
+import { BudgetIndexComponent } from './components/budget-index/budget-index.component';
 
 const routes: Routes = [{
+  path:'index',
+  component:BudgetIndexComponent
+},
+  {
   path: 'budget',
   component: BudgetListComponent
 },
@@ -21,7 +25,7 @@ const routes: Routes = [{
 },
 {
   path:'',
-  redirectTo: '/budget',
+  redirectTo: '/index',
   pathMatch : 'full'
 },
 {

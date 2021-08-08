@@ -13,7 +13,7 @@
         <td [ngClass]= "{'egress': budget.egress, 'entry':!budget.egress}" (click)="selectedBudget(budget._id)">{{ budget.description}}</td>
         <td [ngClass]= "{'egress': budget.egress, 'entry':!budget.egress}">{{ budget.amount }} </td>
         <td class="col-1 align-content-sm-center"><button class="btn btn-danger" (click)="deleteBudget(budget._id)">Eliminar</button> </td>
-        <td class="col-1 align-content-sm-center"><button class="btn btn-success" (click)="open()">Modificar</button> </td>
+        <td class="col-1 align-content-sm-center"><button class="btn btn-success" (click)="updateBudget(budget.description,budget.amount,budget.egress,budget._id)">Modificar</button> </td>
       </tr>
       <tr>
        <td> TOTAL </td>

@@ -7,7 +7,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { BudgetFormComponent } from './components/budget-form/budget-form.component';
 import { BudgetPreviewComponent } from './components/budget-preview/budget-preview.component';
 import { BudgetListComponent } from './components/budget-list/budget-list.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { UsersComponentComponent } from './components/users-component/users-component.component';
+import { UsersRegisterComponent } from './components/users-register/users-register.component';
+
 
 
 @NgModule({
@@ -16,12 +19,15 @@ import {HttpClientModule} from '@angular/common/http'
     NavigationComponent,
     BudgetFormComponent,
     BudgetPreviewComponent,
-    BudgetListComponent
+    BudgetListComponent,
+    UsersComponentComponent,
+    UsersRegisterComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
